@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Resume Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- custom css -->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class = "navbar bg-white">
+            <div class="container">
+                <div class = "navbar-content">
+                    <div class = "brand-and-toggler">
+                        <a href="index.html" class="navbar-brand" onclick="logout(); disableBackButton();">
+                            <img src = "assets/images/curriculum-vitae.png" alt = "" class = "navbar-brand-icon">
+                            <span class = "navbar-brand-text">Quick <span>resume.</span>
+                        </a>
+                        <!-- Inside the navigation bar -->
+<!-- <a href="account.html" class="navbar-link">Account Settings</a> -->
+<!-- Font Awesome -->
+
+<div class="back-button">
+    <button onclick="goBack()">Back</button>
+</div>                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <style>
+                .btn.btn-primary {
+           
+            background-color: #007bff; 
+            color: #fff; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: transform 0.3s ease; 
+            margin-left: 1010px;
+        }
+        
+        .btn.btn-primary:hover {
+            background-color: var(--clr-blue-dark); 
+        }
+        
+        .bi {
+           
+            font-size: 1.5rem; 
+            margin-right: 5px; 
+        }
+    </style>
+
+
+        <script>
+
+function redirectToUpdateResume() {
+        window.location.href = "account.php";
+    }
+
+            
+            function deleteImage() {
+    var input = document.getElementById('image');
+    input.value = '';
+}
+
+            function goBack() {
+                  window.history.back();
+              }
+
+              
+
+          </script>
+
+         
+          
+        
+        
+
+        <section id = "about-sc" class = "">
+            <div class = "container">
+                <div class = "about-cnt">
+                    <form action="account.php" method="POST" class="cv-form" id="cv-form">
+                        <div class = "cv-form-blk">
+                            <div class = "cv-form-row-title">
+                                <h3>about section</h3>
+                            </div>
+                            <div class = "cv-form-row cv-form-row-about">
+                                <div class = "form-elem">
+                                    <label for = "" class = "form-label">Resume Title</label>
+                                    <input name = "resume_title" type = "text" class = "form-control firstname" id = "" onkeyup="generateCV()" placeholder="e.g. Web developer Consultant ">
+                                    <span class="form-text"></span>
+                                </div>
+                                <div class = "cols-3">
+                                    
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">First Name</label>
+                                        <input name = "firstname" type = "text" class = "form-control firstname" id = "" onkeyup="generateCV()" placeholder="e.g. Vishwa">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Middle Name <span class = "opt-text">(optional)</span></label>
+                                        <input name = "middlename" type = "text" class = "form-control middlename" id = "" onkeyup="generateCV()" placeholder="e.g. Teja">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Last Name</label>
+                                        <input name = "lastname" type = "text" class = "form-control lastname" id = "" onkeyup="generateCV()" placeholder="e.g. Thouti">
+                                        <span class="form-text"></span>
+                                    </div>
+                                </div>
+
+                                <div class="cols-3">
+                                    <div class="form-elem">
+                                        <label for="image" class="form-label">Your Image</label>
+                                        <input name="image" type="file" class="form-control image" id="image" accept="image/*" onchange="previewImage()">
+                                        <!-- Delete button to remove selected image -->
+                                        <button type="button" onclick="deleteImage()">Delete</button>
+                                    </div>
+                                    
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Designation</label>
+                                        <input name = "designation" type = "text" class = "form-control designation" id = "" onkeyup="generateCV()" placeholder="e.g. B.Tech">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Address</label>
+                                        <input name = "address" type = "text" class = "form-control address" id = "" onkeyup="generateCV()" placeholder="e.g. Warangal">
+                                        <span class="form-text"></span>
+                                    </div>
+                                </div>
+
+                                <div class = "cols-3">
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Email</label>
+                                        <input name = "email" type = "text" class = "form-control email" id = "" onkeyup="generateCV()" placeholder="e.g. Vishwa@gmail.com">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Phone No:</label>
+                                        <input name = "phoneno" type = "text" class = "form-control phoneno" id = "" onkeyup="generateCV()" placeholder="e.g. 8309680569">
+                                        <span class="form-text"></span>
+                                    </div>
+                                    <div class = "form-elem">
+                                        <label for = "" class = "form-label">Summary</label>
+                                        <input name = "summary" type = "text" class = "form-control summary" id = "" onkeyup="generateCV()" placeholder="e.g. Your self ">
+                                        <span class="form-text"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <button type="submit" onclick="redirectToUpdateResume()" class="btn btn-primary"><i class="bi bi-floppy"></i> Add Resume</button>
+
+                        </div>
+        
+        
+        
+
+      
+    </body>
+</html>
